@@ -1,4 +1,4 @@
-import * as credentials from "../utils/credentials"
+import * as credentials from "../../credentials"
 
 export const signIn = () => {
    const gapi = window.gapi;
