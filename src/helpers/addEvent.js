@@ -26,6 +26,8 @@ export const addEvent = (description, summary, startTime, endTime) => {
          'resource': event,
       })
       .then(response => resolve(response))
-      .catch(err => reject(err))
+      .catch(err => {
+         reject("Some error Occurred, Can't Add event")
+      })
    })
 }

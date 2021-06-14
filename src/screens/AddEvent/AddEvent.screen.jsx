@@ -27,16 +27,17 @@ class AddEventForm extends Component {
    onSubmit = async (event) => {
       event.preventDefault();
       const {description, summary, startTime, endTime} = this.state;
-      const response = await addEvent(description, summary, startTime, endTime);
-      if (response.status === 200) {
+      
+      try {
+         const response = await addEvent(description, summary, startTime, endTime);
+         if (response.status === 200) {
+            this.setState({
+               successMessage: "SuccessFully Added Your Event"
+            })
+         }
+      } catch (err) {
          this.setState({
-            ...this.state,
-            successMessage: "SuccessFully Added Your Event"
-         })
-      } else {
-         this.setState({
-            ...this.state,
-            errorMessage: "Some Error Occurred!!"
+            errorMessage: err
          })
       }
    }
