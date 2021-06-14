@@ -7,6 +7,6 @@ export const updateEvent = (event, eventId, calendarId) => {
          resource: event
       })
       .then((res) => resolve(res))
-      .catch(err => reject(err));
+      .catch(() => reject("Some error Occurred, Can't Update Event"));
    })
 }

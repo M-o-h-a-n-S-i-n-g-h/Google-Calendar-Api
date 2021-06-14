@@ -67,16 +67,18 @@ const EditEventScreen = ({match}) => {
          'description': description,
       };
       
-      const response = await updateEvent(updatedEvent, eventId, "mohan.singh1385664@gmail.com");
-      if (response.status === 200) {
+      try {
+         const response = await updateEvent(updatedEvent, eventId, "mohan.singh1385664@gmail.com");
+         if (response.status === 200) {
+            setState({
+               ...state,
+               successMessage: "SuccessFully Added Your Event"
+            })
+         }
+      } catch (err) {
          setState({
             ...state,
-            successMessage: "Successfully Updated The event",
-         })
-      } else if (response.status === 404) {
-         setState({
-            ...state,
-            errorMessage: "Not Found, Please Check your EventId or CalendarId"
+            errorMessage: err
          })
       }
    }
