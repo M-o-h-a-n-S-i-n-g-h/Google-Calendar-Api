@@ -72,7 +72,7 @@ const EditEventScreen = ({match}) => {
          if (response.status === 200) {
             setState({
                ...state,
-               successMessage: "SuccessFully Added Your Event"
+               successMessage: "SuccessFully Updated Your Event"
             })
          }
       } catch (err) {
