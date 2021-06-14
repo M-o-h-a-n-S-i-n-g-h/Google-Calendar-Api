@@ -73,7 +73,6 @@ const DisplayEventsScreen = ({history}) => {
            </DisplayEventsStyles>
         </div>
      </>
-   
    )
 }
 

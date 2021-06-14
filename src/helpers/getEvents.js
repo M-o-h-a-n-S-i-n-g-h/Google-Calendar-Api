@@ -5,6 +5,7 @@ export const getEvents = () => {
       gapi.load("calendar", "v3", () => console.log("Calendar loaded"));
       gapi.client.calendar.events.list({
          calendarId: "primary",
+         timeMin: new Date().toISOString(),
       })
       .then((response) => {
          resolve(response.result)

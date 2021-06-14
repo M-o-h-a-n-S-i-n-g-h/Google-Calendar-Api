@@ -17,6 +17,9 @@ const EventStyles = styled.div`
 `
 
 const Event = ({description, startTime, endTime, summary}) => {
+   
+   startTime = new Date(startTime).toString()
+   endTime = new Date(endTime).toString()
    return (
      <EventStyles>
         <h3>Description: <span>{description}</span></h3>
